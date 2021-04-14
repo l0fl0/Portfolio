@@ -151,34 +151,34 @@ span {
   transition: 0.3s;
   display: flex;
   flex-direction: column;
+  background: var(--secondary-color);
+  color: var(--dark-color);
+  border-radius: 10px;
+  border:1px transparent;
+  overflow: hidden;
 }
 
 .project-img {
   width: 100%;
   height: 100%;
-  background: var(--primary-color);
 }
 
 .project-tile:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
   color: var(--light-color);
+  background: var(--dark-color);
 }
 
 .project-tile .desc {
-  background: var(--secondary-color);
-  color: var(--dark-color);
   margin-top: auto;
   padding: 0.5rem 2rem;
   
 }
 
-.project-tile .desc:hover {
-  color: var(--accent-color);
-  background: var(--dark-color);
-}
 .desc h4{
   font-size: 1.4rem;
 }
+
 .desc p {
   font-size: 1.1rem;
 }
