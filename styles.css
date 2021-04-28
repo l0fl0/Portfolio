@@ -29,30 +29,28 @@ ul{
   padding: 0;
 } 
 
-h2 {
-font-size: 2rem;
-color: var(--primary-color)
+section {
+  overflow: hidden;
+  max-width: 100%;
+
 }
-
-
 
 /* Navigation */
 
 .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
-    background-color: var(--primary-color);
-    padding: 1rem; 
-    font-size: 1.3rem;
-    display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  z-index: 3;
+  background-color: var(--primary-color);
+  padding: 1rem; 
+  font-size: 1.3rem;
+  display: flex;
 }
 .nav{
-  display: flex;
-  margin:0 10% 0 auto;
- 
+ display: flex;
+ margin:0 10% 0 auto;
 }
 .nav .nav-link{ 
   color: var(--dark-color);
@@ -79,6 +77,14 @@ color: var(--primary-color)
   margin: auto;
   padding: 5rem;
 }
+h1{
+  font-size: 4rem;
+  color: var(--accent-color);
+}
+h2 {
+  font-size: 2rem;
+  color: var(--primary-color)
+  }
 
 .welcome-title {
   display: flex;
@@ -135,9 +141,7 @@ span {
 
 #projects {
   background: var(--accent-color);
-  padding: 1rem;
-  width: 100%;
-  
+  padding: 1rem;  
 }
 .projects-container {
   display: grid;
@@ -189,13 +193,13 @@ span {
 
 #contact-info {
   height: 50vh;
+}
+.contact-container {
   margin-top: 5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
-
 #contact-info p {
   font-size: 1.3rem;
   color: var(--light-color);
@@ -220,6 +224,8 @@ span {
 
 
 
-@media (min-width: 680px), screen and (orientation: portrait) { 
-
+/* @media (min-width: 680px), screen and (orientation: portrait) { 
+.projects-container{
+  width:auto;
 }
+} */
