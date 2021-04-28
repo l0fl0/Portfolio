@@ -141,10 +141,10 @@ span {
 
 #projects {
   background: var(--accent-color);
-  padding: 1rem;  
 }
 .projects-container {
   display: grid;
+  padding: 1rem;
   margin: 2rem 0;
   gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -192,7 +192,7 @@ span {
 /* contact information */
 
 #contact-info {
-  height: 50vh;
+  max-height: 50vh;
 }
 .contact-container {
   margin-top: 5rem;
@@ -224,8 +224,3 @@ span {
 
 
 
-/* @media (min-width: 680px), screen and (orientation: portrait) { 
-.projects-container{
-  width:auto;
-}
-} */
