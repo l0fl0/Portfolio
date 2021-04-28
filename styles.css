@@ -192,7 +192,8 @@ span {
 /* contact information */
 
 #contact-info {
-  max-height: 50vh;
+  max-height: 70vh;
+ 
 }
 .contact-container {
   margin-top: 5rem;
@@ -200,7 +201,7 @@ span {
   display: flex;
   flex-direction: column;
 }
-#contact-info p {
+.contact-container p {
   font-size: 1.3rem;
   color: var(--light-color);
 }
@@ -217,10 +218,13 @@ span {
   padding: 0.5rem;
 }
 
-.profile-link:hover {
-  border-bottom: 2px solid;
+
+@media (device-width: 500px), screen and (orientation: portrait) { 
+  #contact-info {
+    max-height: 50%;
+    margin-bottom: 30px;
+  }
+  .profile-link{
+    margin: 0.5rem;
+  }
 }
-
-
-
-
