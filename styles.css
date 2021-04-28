@@ -194,7 +194,6 @@ span {
 
 #contact-info {
   max-height: 70vh;
- 
 }
 .contact-container {
   margin-top: 5rem;
@@ -220,7 +219,7 @@ span {
 }
 
 
-@media (device-width: 500px), screen and (orientation: portrait) { 
+@media screen and (max-width: 500px) , (orientation: landscape) { 
   #contact-info {
     max-height: 50%;
     margin-bottom: 30px;
@@ -229,3 +228,4 @@ span {
     margin: 0.5rem;
   }
 }
+
