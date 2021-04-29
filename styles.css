@@ -93,10 +93,9 @@ h2 {
   transition: opacity 2s;
 }
 
-span {
-  margin-left: 0.5rem;
+.welcome-title span {
   font-size: 5rem;
-  padding: 0 5px;
+  padding: 0 5px 0 0;
 }
 
 .welcome-title span {
@@ -219,9 +218,12 @@ span {
 }
 
 
-@media screen and (max-width: 500px) , (orientation: landscape) { 
+@media screen and (max-width: 500px)  { 
+  .welcome-title span {
+    font-size: 4rem;
+    padding: 0 5px 0 0;
+  }
   #contact-info {
-    max-height: 50%;
     margin-bottom: 30px;
   }
   .profile-link{
