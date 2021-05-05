@@ -1,0 +1,147 @@
+body{
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #555;
+  }
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li{
+  margin: 1rem 0;
+}
+
+
+h1, h3 {
+  text-align: center;
+}
+
+svg {
+  cursor: pointer;
+}
+ /* header */
+
+.mongo-bar{
+  position: absolute;
+  top: 0;
+  background: white;
+  text-align: center;
+  width: 100%;
+  z-index: 4;
+  display: flex;
+  padding: 1rem 5rem;
+  border-bottom: 1px solid rgb(184, 181, 181) ;
+}
+.mongo-logo{
+  width: 150px;
+  margin-right: 1rem;
+}
+.mongo-bar .links{
+  display: grid;
+  place-items: center;
+  color: #555;
+  font-size: 1.5rem;
+  border-left: 1px grey solid ;
+  margin-right: 1rem;
+  padding-left: 1rem;
+}
+.mongo-bar .links:hover {
+  color: rgb(0,200,0);
+}
+
+/* Navagation */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; 
+  overflow-x: hidden;
+  font-family: monospace;
+  display: flex;
+  background: white;
+  box-shadow: 0 0 5px 1px #999;
+  text-align: left;
+}
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  width: 0px;
+}
+
+.nav-content .mongo-logo{
+  margin: 2rem 0 2rem 5rem;
+}
+
+.nav-content h3{
+  font-size: 1.3rem;
+}
+
+.nav-content  .nav-link{
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: #555;
+  transition: 0.3s;
+  display: block;
+  padding: 0.5rem;
+}
+
+.nav-link:hover {
+  color: rgb(0,200,0);
+}
+
+.menu{ 
+  padding: 6rem 15px 0;
+  background: white;
+}
+
+#closeNav {
+  display: none;
+  color: green;
+}
+
+
+
+/* Main Document */
+
+main{
+  margin: 40px;
+  transition: margin-left .5s;
+  padding: 16px;
+}
+main header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+.main-section {
+  border-top: 2px black solid;
+}
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
