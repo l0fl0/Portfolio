@@ -195,7 +195,7 @@ h2 {
   max-height: 70vh;
 }
 .contact-container {
-  margin-top: 5rem;
+  margin: 5rem 0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -223,9 +223,7 @@ h2 {
     font-size: 4rem;
     padding: 0 5px 0 0;
   }
-  #contact-info {
-    margin-bottom: 30px;
-  }
+  
   .profile-link{
     margin: 0.5rem;
   }
