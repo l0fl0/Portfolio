@@ -143,15 +143,17 @@ h2 {
 
 #projects {
   background: var(--accent-color);
-  width: 100vw;
+  max-width: 100vw;
+  display: flex;
 }
 .projects-container {
   display: grid;
   padding: 1rem;
-  margin: 2rem 0;
+  margin: 2rem auto;
   gap: 15px;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  max-width: 1200px;
+  min-width: 0px;
 }
 
 .project-tile {
@@ -230,7 +232,11 @@ h2 {
     font-size: 4rem;
     padding: 0 5px 0 0;
   }
-  
+  .projects-container {
+    grid-template-columns: repeat(auto-fit);
+    margin: 0;
+    padding: 0.3rem;
+  }
   .profile-link{
     margin: 0.8rem;
   }
