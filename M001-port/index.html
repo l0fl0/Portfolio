@@ -5,21 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/M001-port/styles.css">
+    <link rel="stylesheet" href="/M001/index.css">
     <title>M001</title>
 </head>
 
 <body>
     <header class="mongo-bar">
-        <a href="https://www.mongodb.com/2"><img class="mongo-logo"
-                src="/M001-port/resources/MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" alt="mongodb_logo"></a>
-        <a class="links" href="https://university.mongodb.com/"><span>University</span></a>
-        <a class="links" href="https://docs.mongodb.com/"><span>Documentation</span></a>
+        <div class="mongo-bar-container">
+            <a class="logo" href="https://www.mongodb.com/2"><img class="mongo-logo"
+                    src="/resources/MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" alt="mongodb_logo"></a>
+            <a class="links" href="https://university.mongodb.com/"
+                title="MongoDB University courses"><span>University</span></a>
+            <a class="links" href="https://docs.mongodb.com/" title="MongoDB Docs"><span>Documentation</span></a>
+        </div>
     </header>
+
     <nav id="navbar">
         <div id="nav-content" class="nav-content">
             <a href="https://www.mongodb.com/2"><img class="mongo-logo"
-                    src="/M001-port/resources/MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" alt="mongodb_logo">
+                    src="/resources/MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" alt="mongodb_logo">
             </a>
             <h3>M001</h3>
             <div class="nav-items">
@@ -31,7 +35,7 @@
                 <a class="nav-link" href="#Next_Steps">Next Steps</a>
             </div>
         </div>
-        <div class="menu">
+        <div id="menu-button" class="menu">
             <svg onclick="openNav()" preserveAspectRatio="xMidYMid meet" height="20px" width="20px" viewBox="0 0 16 12"
                 id="openNav" title="open menu">
                 <g>
@@ -49,19 +53,22 @@
             </svg>
         </div>
     </nav>
+
     <main id="main-doc">
+        <div class="main-content">
+            <header class="main-header">
+                <h1>M001: MongoDB Basics</h1>
+                <h3>Learn the fundamentals of MongoDB.</h3>
+            </header>
 
-        <h1>M001: MongoDB Basics</h1>
-        <h3>Learn the fundamentals of MongoDB.</h3>
+            <section id="What_is_MongoDB?" class="section">
+                <header>What is MongoDB?</header>
+                <p>A structured way to store and access data, that doesn't use legacy approach of related tables of
+                    data. So you store data in an organized way just not using tables rows and columns. MongoDB is a
+                    No-SQL document database. </p>
 
-        <section id="What_is_MongoDB?" class="main-section">
-            <header>What is MongoDB?</header>
-            <p>A structured way to store and access data, that doesn't use legacy approach of related tables of
-                data. So you store data in an organized way just not using tables rows and columns. MongoDB is a
-                No-SQL document database. </p>
-
-            <h4>What is a document?</h4>
-            <code>{ 
+                <h4>What is a document?</h4>
+                <code>{ 
              "field" : "value", 
              "field" : "value", 
              "name"  : "Lachshmi", 
@@ -69,50 +76,50 @@
              "age"   : "26" 
             }
                </code>
-            <ul>
-                <li>Document - a way to organize and store data as a set of field-value pairs.</li>
-                <li>Field - a unique identifier for a datapoint.</li>
-                <li>Value - data related to a given identifier.</li>
-                <li>Collection - an organized store of documents in MongoDB, usually with common fields between
-                    documents. There can be many collections per database and many documents per collection.</li>
-            </ul>
-            <h4>What is MongoDB Atlas?</h4>
-            Atlas has many tools and services within it that are built specifically for the MongoDB Database.
+                <ul>
+                    <li>Document - a way to organize and store data as a set of field-value pairs.</li>
+                    <li>Field - a unique identifier for a datapoint.</li>
+                    <li>Value - data related to a given identifier.</li>
+                    <li>Collection - an organized store of documents in MongoDB, usually with common fields between
+                        documents. There can be many collections per database and many documents per collection.</li>
+                </ul>
+                <h4>What is MongoDB Atlas?</h4>
+                Atlas has many tools and services within it that are built specifically for the MongoDB Database.
 
-            Replica Set - a few connected machines that store the same data to ensure that if something happens to
-            one of the machines the data will remain intact. Comes from the word replicate - to copy something.
+                Replica Set - a few connected machines that store the same data to ensure that if something happens to
+                one of the machines the data will remain intact. Comes from the word replicate - to copy something.
 
-            Instance - a single machine locally or in the cloud, running a certain software, in our case it is the
-            MongoDB database.
+                Instance - a single machine locally or in the cloud, running a certain software, in our case it is the
+                MongoDB database.
 
-            Cluster - group of servers that store your data.
-        </section>
+                Cluster - group of servers that store your data.
+            </section>
 
-        <section id="Importing,_Exporting,_and_Querying_Data" class="main-section">
-            <header>Importing, Exporting, and Querying Data</header>
-            <p>
-                <a href="https://www.mongodb.com/json-and-bson">More information on JSON VS. BSON</a>
-            </p>
-            <p>SRV connection string - a specific format used to establish a connection between your application and
-                a MongoDB instance.</p>
-            <code>mongodump --uri "mongodb+srv://<-your username->:<-your password->@<-your cluster->.mongodb.net/sample_supplies"
+            <section id="Importing,_Exporting,_and_Querying_Data" class="section">
+                <header>Importing, Exporting, and Querying Data</header>
+                <p>
+                    <a href="https://www.mongodb.com/json-and-bson">More information on JSON VS. BSON</a>
+                </p>
+                <p>SRV connection string - a specific format used to establish a connection between your application and
+                    a MongoDB instance.</p>
+                <code>mongodump --uri "mongodb+srv://<-your username->:<-your password->@<-your cluster->.mongodb.net/sample_supplies"
         
         mongoexport --uri="mongodb+srv://<-your username->:<-your password->@<-your cluster->.mongodb.net/sample_supplies" --collection=sales --out=sales.json
         
         mongorestore --uri "mongodb+srv://<-your username->:<-your password->@<-your cluster->.mongodb.net/sample_supplies"  --drop dump
         
         mongoimport --uri="mongodb+srv://<-your username->:<-your password->@<-your cluster->.mongodb.net/sample_supplies" --drop sales.json</code>
-            <p>Atlas UI</p>
-            <p>Collections is the Data Explorer feature of Atlas. Quering is avalible in the collections find
-                section and the filter search box.</p>
-        </section>
+                <p>Atlas UI</p>
+                <p>Collections is the Data Explorer feature of Atlas. Quering is avalible in the collections find
+                    section and the filter search box.</p>
+            </section>
 
-        <section id="MQL" class="main-section">
-            <header>MQL</header>
-            <p>Using the mongo shell we can complete atlas functions directly from the terminal. Interacting with
-                the data is done by using MQL - MongoDB query language.</p>
-            <h4>Terminal Commands</h4>
-            <code>
+            <section id="MQL" class="section">
+                <header>MQL</header>
+                <p>Using the mongo shell we can complete atlas functions directly from the terminal. Interacting with
+                    the data is done by using MQL - MongoDB query language.</p>
+                <h4>Terminal Commands</h4>
+                <code>
               > show dbs - lits databases in current access
               > use <i>database_name</i>; - opens database
               > show collections; - lists collections within current database
@@ -121,14 +128,14 @@
               > db.<i>collection</i>.find()
               > db.<i>collection</i>.updateMany() - updates matched queries
             </code>
-            <h4>Update Operators</h4>
-            <code>$inc - increments values
+                <h4>Update Operators</h4>
+                <code>$inc - increments values
                   $set - sets values & creates new field, if field does not exist
                   $unset - deletes values
             </code>
 
-            <h4>Comparison Operators</h4>
-            <code>$eq - equal to / default operator
+                <h4>Comparison Operators</h4>
+                <code>$eq - equal to / default operator
                   $ne - Not equal to
                   $gt - grater than
                   $lt - less than
@@ -137,8 +144,8 @@
               Syntax
               {<i>"field"</i> : {<i>"$operator"</i> : <i>value</i>}}
             </code>
-            <h4>Logical Operators</h4>
-            <code> $and - match all the specified query clauses / default operator when operator is not specified
+                <h4>Logical Operators</h4>
+                <code> $and - match all the specified query clauses / default operator when operator is not specified
               $or - at least one query clause is matched
               $nor - fail to match both given clauses
               $not - negates the query requirement
@@ -147,42 +154,41 @@
               {"$operator" : [ {<i>cluase</i>}, {<i>cluase</i>},…] }
             </code>
 
-            <h4>Expressive Operator</h4>
-            <code>$expr - allows the use of aggregation expressions within the query language
+                <h4>Expressive Operator</h4>
+                <code>$expr - allows the use of aggregation expressions within the query language
               {"$expr" : {<i>expression</i>} } 
               - it also allows up to use variables and conditional statements
             </code>
-        </section>
+            </section>
 
-        <section id="Indexing_and_Aggregation_Pipeline" class="main-section">
-            <header>Indexing and Aggregation Pipeline</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </section>
+            <section id="Indexing_and_Aggregation_Pipeline" class="section">
+                <header>Indexing and Aggregation Pipeline</header>
+                <p></p>
+                <p></p>
+                <code></code>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </section>
 
-        <section id="Next_Steps" class="main-section">
-            <header>Next Steps</header>
-            <p></p>
-        </section>
+            <section id="Next_Steps" class="section">
+                <header>Next Steps</header>
+                <p></p>
+            </section>
+        </div>
     </main>
     <script>
         const openNav = () => {
             document.getElementById("nav-content").style.width = "270px";
-            document.getElementById("main-doc").style.marginLeft = "310px";
             document.getElementById("closeNav").style.display = 'block';
             document.getElementById("openNav").style.display = 'none';
         }
         const closeNav = () => {
             document.getElementById("nav-content").style.width = "0";
-            document.getElementById("main-doc").style.marginLeft = "50px";
             document.getElementById("openNav").style.display = 'block';
             document.getElementById("closeNav").style.display = 'none';
         }
