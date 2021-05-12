@@ -35,12 +35,13 @@ ul {
 }
 
 
-.container {
+/* .container {
     margin: auto;
     max-width: 1100px;
     overflow: hidden; 
-    padding: 0 2rem;
-}
+} */
+
+/* Navbar */
 
 .navbar {
     font-size: 1.3rem;
@@ -49,6 +50,8 @@ ul {
 .navbar .container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    padding: 0 2rem;
+
 }
 
 .navbar .logo {
@@ -77,8 +80,9 @@ ul {
 .section-a .container {
     display: grid; 
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 3rem;
+    gap: 3rem;
     place-items: center;
+    padding: 1rem;
 }
 
 .section-a h1 {
@@ -96,7 +100,7 @@ ul {
 .section-b {
     position: relative;
     background: url('https://i.ibb.co/1RS1dqC/section-b.jpg') no-repeat bottom center/cover;
-    height: 600px;
+    min-height: 600px;
 }
 
 .section-b-inner {
@@ -175,7 +179,7 @@ ul {
   .section-footer .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+    gap: 1rem;
   }
   
   .section-footer h2 {
@@ -270,4 +274,23 @@ ul {
     top: 0;
     left: 0;
     background-color: var(--overlay-color);
+  }
+
+
+  @media (max-width: 700px) ,(max-height: 500px) {
+    .section-a h1 {
+      font-size: 2rem;
+    }
+    .section-a img {
+      max-width: 300px;
+    }
+    .section-a .container {
+      display: flex; 
+      flex-direction: column-reverse;
+      place-items: center;
+
+    }
+    
+
+
   }
