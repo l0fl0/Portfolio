@@ -16,10 +16,13 @@ body{
 a{
   text-decoration: none;
   color: var(--secondary-color);
+  border: transparent;
+  border-radius: 10px;
 }
 
 a:hover{
   color: var(--light-color);
+  background: #40515881; /* last two digits opacity value */
 }
 
 
@@ -57,12 +60,9 @@ section {
  margin-right: 1rem;
 }
 .nav-link{ 
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
-.nav-link:hover{
-  color: var(--light-color);
-}
 
 
 /* Welcome */
@@ -221,8 +221,8 @@ h2 {
 .profile-link {
   font-size: 1.6rem;
   width:max-content;
-  margin: 1rem;
-  padding: 0.5rem;
+  margin:0 0.3rem;
+  padding: 1rem;
 }
 
 
@@ -238,7 +238,8 @@ h2 {
     padding: 0.3rem;
   }
   .profile-link{
-    margin: 0.8rem;
+    margin:0 0.3rem;
+    padding: 0.5rem;
   }
 
   .nav-bar {
