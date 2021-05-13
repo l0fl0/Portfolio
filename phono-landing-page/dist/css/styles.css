@@ -35,12 +35,6 @@ ul {
 }
 
 
-/* .container {
-    margin: auto;
-    max-width: 1100px;
-    overflow: hidden; 
-} */
-
 /* Navbar */
 
 .navbar {
@@ -98,33 +92,35 @@ ul {
 
 /* Section b */
 .section-b {
-  position: relative;
   background: url('https://i.ibb.co/1RS1dqC/section-b.jpg') no-repeat bottom center/cover;
-  min-height: 600px;
+  min-height: max-content;
 }
 
-.section-b-inner {
+.section-b .overlay {
+  display: grid;
+  place-items: center;
+}
+
+.section-b .content {
   color: #fff;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  place-items: center;
   text-align: center;
   margin: auto;
-  max-width: 860px;
-  padding: 5rem 0;
+  max-width: 900px;
+  padding: 5rem 1rem;
 }
   
-.section-b-inner h3 {
+.section-b .content h3 {
   font-size: 2rem;
 }
   
-.section-b-inner h2 {
+.section-b .content h2 {
   font-size: 5rem;
   margin-top: 1rem;
 }
   
-.section-b-inner p {
+.section-b .content p {
   margin-top: 1rem;
   font-size: 1.5rem;
 }
@@ -174,14 +170,19 @@ ul {
   background: var(--primary-color);
   color: #fff;
   padding: 4rem 0;
-  }
-  
-.section-footer .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  place-items: center;
   }
-  
+
+.section-footer .foot-section{
+  padding: 1rem;
+  }
+
+.foot-section.mid{
+  display: flex;
+  gap: 2rem;
+  }
+
 .section-footer h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -211,11 +212,7 @@ ul {
   margin-top: 1rem;
   }
   
-  /* // .form-control-wrap {
-  // 	position: relative;
-  // 	display: inline-block;
-  // 	width: 100%;
-  // } */
+
   
 .email-form .form-control {
   display: inline-block;
@@ -270,14 +267,14 @@ ul {
 .overlay {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   background-color: var(--overlay-color);
 }
 
 
-@media (max-width: 700px) ,(max-height: 500px) {
+@media (max-width: 870px) {
   .section-a h1 {
     font-size: 2rem;
   }
@@ -287,9 +284,18 @@ ul {
   .section-a .container {
     display: flex; 
     flex-direction: column-reverse;
-    place-items: center;
   }
     
-
+  .section-b .content h3 {
+    font-size: 1.5rem;
+  }
+    
+  .section-b .content h2 {
+    font-size: 4rem;
+  }
+    
+  .section-b .content p {
+    font-size: 1.5rem;
+  }
 
 }
