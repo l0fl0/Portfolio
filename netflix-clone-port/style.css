@@ -33,6 +33,7 @@ p {
 }
 
 img {
+    height: 100%;
     width: 100%;
 }
 
@@ -45,9 +46,11 @@ ul {
 /* Header */
 .showcase {
     width: 100%;
-    height: 80vh;
+    min-height: max-content;
+    max-height: 80vh; 
+    padding: 0 0 10rem 0;
     position: relative;
-    background: url('/netflix-clone-port/img/background-large.jpg') no-repeat center center /cover;
+    background: url('/netflix-clone-port//img/background-large.jpg') no-repeat center center /cover;
 }
 
 .showcase::after {
@@ -63,46 +66,44 @@ ul {
     rgba(0,0,0,.85));
 }
 
-.showcase-top {
+.header-content {
     position: relative;
     z-index: 2;
     height: 90px;
+    display: flex;
+    padding: 1rem 5%;
 }
 
-.showcase-top img {
-    width: 170px;
-    position: absolute; 
-    top: 60%;
-    left: 8%;
-    transform: translate(-50%, -50%);
-    margin-left: 0 ;
+.header-content img {
+    max-width: 170px;
+    margin: 0 auto 0 0;
+    padding: 0.5rem;
 }
-
-.showcase-top a {
-    position: absolute; 
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
+.header-content .language-option{
+    margin: auto 3%;
+    font-size: 1rem;
+}
+.header-content a {
+    height: 2rem;
+    margin: auto 0;
 }
 
 .showcase-content {
     position: relative;
-    margin: auto;
+    padding: 9rem 0 0;
+    margin: 0 auto;
     width: 65%;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    gap: 1rem;
+    place-items: center;
     text-align: center;
-    margin-top: 9rem;
 }
 
 .showcase-content h1 {
     font-weight: 560;
     font-size: 4rem;
     line-height: 1.1;
-    margin: 0 0 1rem;
 }
 
 .showcase-content h2 {
@@ -110,105 +111,109 @@ ul {
     font-weight: 400;
     font-size: 1.7rem;
     line-height: 1.25;
-    margin: 0 0 1rem;
 }
 
 .showcase-content h3 {
-    margin-top: 1rem;
     font-weight: 400;
 }
 
-
 /* Email Form */
-.email-container {
+.email-form {
     display: flex;
-    margin: 2rem 0 1rem;
+    padding: 0 1rem;
+    width: 90%;
+    max-width: 800px;
 }
-.email-container input {
-    min-width: 500px;
-    height: 70px;
+.email-form input {
+    flex: 2 1 auto;
 }
+/*! COMMIT WHEN EMAIL FORM IS RESPONSIVE  */
 
 
 /* Stages */
+.stage {
+    display: grid;
+    place-items: center;
+}
 .info-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5rem;
-    align-items: center;
-    justify-content: center;
-    margin: 0rem 25rem;
-    padding:2rem 0rem 3rem; 
+    gap: 5rem;
+    place-items: center;
+    text-align: left;
+    margin: 0rem 5%;
+    padding:3rem 0 4rem; 
+    max-width: 900px;
+}
+.stage img {
+    max-width: 600px;
 }
 
 
 /* FAQ  */
 .faq-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     text-align: center;
-    margin: 5rem 0 5rem;
+    margin: 5rem 5%;
 }
 
 .faq-content {
-    width: 42.5%;
+    width: 85%;
+    max-width: 900px;
 }
+ 
 
-#questions {
+.questions-container {
     margin-top: 3rem;
 }
 
-.question-container {
+.question {
     display: flex;
     background-color: var(--dark-color);
     color: #fff;
     margin-bottom: .5rem;
-    padding: .6rem;
+    padding: 0.6rem 2rem;
     align-items: center;
     cursor: pointer;    
 }
 
-.question-container span{
-    margin-left: 2rem;
-    margin-right: auto;
-}
 
-.question-container i {
-    margin-right: 2rem;
-    font-size: 3rem;
+.question i {
+    margin-left: auto;
+    font-size: 2.5rem;
     font-style: normal;
 }
+/*! COMMIT WHEN FAQ IS RESPONSIVE  */
 
 
 /* Footer */
 .footer-container {
     max-width: 70%;
     margin: 3rem auto;
-    overflow: hidden;
+    display: grid;
+    gap: 1.5rem;
 }
 
-.footer, .footer a {
+.footer  a{
     color: rgb(95,95,95);
 }
+
 .footer a:hover {
     text-decoration: underline;
 }
-#help-desk {
-    margin-bottom: 1.5rem;
-}
+
 
 .links-container {
     display: grid;
-    grid-template-columns: repeat(4,5fr);
-    font-size: 0.8em;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(4,1fr);
+    font-size: 0.83em;
 }
 
-.link {
-    margin-bottom: 1rem; 
+.links-container .link {
+    padding: 0.5rem; 
 }
+
 
 
 
@@ -216,12 +221,12 @@ ul {
 .language-option{
     border: 0.5px solid;
     max-width: 7.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .btn-icon {
     padding: 0.5rem;
-    margin: 0.5rem 0;
-    
 }
 
 .language-option:hover {
@@ -257,17 +262,20 @@ ul {
     display: inline-block;
     background: var(--primary-color);
     color: #fff;
-    padding: 0.5rem 1.25rem;
     font-size: 1rem;
-    text-align: center;
     border: none;
     cursor: pointer;
-    margin-right: 0.5rem;
     outline: none;
     box-shadow: 0 1px 0 rgba(0,0,0, 0.45);
     border-radius: 2px;
+    display: flex;
+    align-items: center;
+    min-width: max-content;
+    padding: 0 1rem;
 }
-
+.btn span {
+    margin:0 auto;
+}
 .btn:hover {
     background-color: red;
 }
@@ -277,10 +285,104 @@ ul {
 }
 
 .btn-xl {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    height: 70px;
-    padding: 1.2rem 2rem;
     text-transform: uppercase; 
+    min-height: 60px;
 }
 
+/*! COMMIT WHEN UTILITIES ARE RESPONSIVE  */
+
+
+@media (max-width: 950px) {
+    .showcase-content h1 {
+        font-size: 3rem;
+    }
+    .header-content img {
+        max-width: 130px;
+        max-height: 45px;
+        
+    }
+    .info-container {
+        grid-template-columns: none;
+        gap: 5%;
+        margin: 0rem 5%;
+        max-width: 900px;
+        text-align: center;
+    }
+
+    .info-container.mobile{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .links-container {
+        gap: 1rem;
+        grid-template-columns: repeat(2,1fr);
+    } 
+
+    .links-container .link {
+        padding: 0.3; 
+    }
+    
+    .email-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .email-form input {
+        height: 60px;
+        margin: 0 0 1rem 0;
+    }
+    .email-form a {
+        font-size: 1.5rem;
+        margin: auto;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .text-xl{
+        font-size: 2rem;
+    }
+    
+    .text-lg{
+        font-size: 1.2rem;
+    }
+} 
+
+@media (max-width: 550px) {
+    /*  */
+  
+    .showcase {
+        padding-bottom: 5rem ;
+    }
+    .showcase-content {
+        padding-top: 3rem;
+        width: 100%;
+    }
+    
+    .showcase-content h1 {
+        font-size: 1.9rem;
+    }
+    
+    .showcase-content h2 {
+        font-size: 1.2rem;
+    }
+    /*  */
+    .links-container .link {
+        padding: 0;
+    }
+
+    .faq-container{
+        margin: 5rem 0;
+    }
+    
+    .faq-content {
+        width: 100vw;
+    }
+     
+    .faq .question i {
+        font-size: 2rem;
+    }
+}
