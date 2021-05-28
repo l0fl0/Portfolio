@@ -34,23 +34,23 @@ ul {
   list-style: none;
 }
 
-
 /* Navbar */
 
 .navbar {
   font-size: 1.3rem;
   padding: 0.3rem 0;
 }
+
 .navbar .container{
   display: grid;
   grid-template-columns: repeat(2,1fr);
   padding: 0 2rem;
-
 }
 
 .navbar .logo {
   font-size: 2rem;
 }
+
 .navbar .nav {
   justify-self: flex-end;
   display: flex;
@@ -69,6 +69,9 @@ ul {
 
 .section-a {
   margin: 2rem 0;
+  display: grid;
+  place-items: center;
+
 }
 
 .section-a .container {
@@ -77,6 +80,7 @@ ul {
   gap: 3rem;
   place-items: center;
   padding: 1rem;
+  max-width: 1000px;
 }
 
 .section-a h1 {
@@ -94,6 +98,7 @@ ul {
 .section-b {
   background: url('https://i.ibb.co/1RS1dqC/section-b.jpg') no-repeat bottom center/cover;
   min-height: max-content;
+  height: 900px;
 }
 
 .section-b .overlay {
@@ -172,16 +177,17 @@ ul {
   padding: 4rem 0;
   display: grid;
   place-items: center;
-  }
+}
+
 
 .section-footer .foot-section{
   padding: 1rem;
-  }
+}
 
 .foot-section.mid{
   display: flex;
   gap: 2rem;
-  }
+}
 
 .section-footer h2 {
   font-size: 2rem;
