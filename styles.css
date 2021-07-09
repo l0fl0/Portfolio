@@ -165,7 +165,7 @@ h2 {
 }
 .welcome-title-one span:nth-child(4),
 .welcome-title-two span:first-child {
-  animation:  fadein-special 4s linear;
+  animation:  fadein-special 3s linear;
 }
 
 /* Projects */
