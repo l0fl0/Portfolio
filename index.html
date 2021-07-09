@@ -28,41 +28,59 @@
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="/resources/LF_favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/resources/LF_favicon.ico"
+      type="image/x-icon"
+    />
   </head>
 
   <body>
     <header id="navbar" class="nav-bar">
-      <nav class="nav">
-        <a href="#projects" class="nav-link" title="Projects section"
-          >Projects</a
-        >
-        <a
-          href="#contact-info"
-          class="nav-link"
-          title="Personal Contact information"
-          >Contact</a
-        >
-      </nav>
+      <div class="header-content">
+        <div class="nav-name">
+          <h3>{ Louis Flores }</h3>
+        </div>
+        <nav class="nav">
+          <a href="#projects" class="nav-link" title="Projects section"
+            ><span>Projects</span></a
+          >
+          <a
+            href="#contact-info"
+            class="nav-link"
+            title="Personal Contact information"
+            ><span>Contact</span></a
+          >
+        </nav>
+      </div>
     </header>
 
     <section id="welcome-section">
       <div class="welcome-container">
         <a
-          id="welcome-tilte"
+          id="welcome-title"
           class="welcome-title"
           href=""
           title="Refresh animation"
         >
           <!-- <a> to refresh to see the animation -->
-          <span class="welcome-animation">W</span>
+          <div class='welcome-title-one'>
+          <span class="welcome-animation">H</span>
           <span class="welcome-animation">e</span>
           <span class="welcome-animation">l</span>
-          <span class="welcome-animation">c</span>
+          <span class="welcome-animation">l</span>
           <span class="welcome-animation">o</span>
-          <span class="welcome-animation">m</span>
+          <span class="welcome-animation"> </span>
+          </div>
+          <div class='welcome-title-two'>
+          <span class="welcome-animation">F</span>
+          <span class="welcome-animation">R</span>
+          <span class="welcome-animation">i</span>
           <span class="welcome-animation">e</span>
-          <span class="welcome-animation">!</span>
+          <span class="welcome-animation">n</span>
+          <span class="welcome-animation">d</span>
+          <span class="welcome-animation">👋</span>
+          </div>
         </a>
         <h2>Enjoy browsing the projects i've made.</h2>
       </div>
@@ -70,20 +88,24 @@
 
     <section id="projects">
       <div class="projects-container">
-        <a
-          class="project-tile"
-          href="/phono-landing-page/dist/index.html"
-          target="_blank"
-          title="Template product landing page"
-        >
-          <img
-            class="project-img"
-            src="/resources/phono-screenshot.png"
-            alt="product landing page screenshot"
-          />
-          <div class="desc">
-            <h4>Product landing page</h4>
-            <p>Template for a product landing page.</p>
+        <a class="project-tile" href="/phono-landing-page/dist/index.html" target="_blank" title="Template product landing page">
+          <div class="project-img">
+            <img
+              src="/resources/phono-screenshot.png"
+              alt="product landing page screenshot"
+            />
+          </div>
+          <div class="project-information">
+            <div class="project-heading">
+              <h4>Product landing page</h4>
+              <h5>A Template for a product landing page.</h5>
+            </div>
+            <ul class="project-description">
+              <li>Showcases Responsive web design.</li>
+              <li>
+                Uses a Javascript / Css library called
+              </li>
+            </ul>
           </div>
         </a>
         <a
@@ -92,14 +114,23 @@
           target="_blank"
           title="A Netflix clone"
         >
-          <img
-            class="project-img"
-            src="/resources/netflix-screenshot.png"
-            alt="Netflix clone scrrenshot"
-          />
-          <div class="desc">
-            <h4>Netflix clone</h4>
-            <p>A clone of Netflix's landing page - mid 2020</p>
+          <div class="project-img">
+            <img
+              src="/resources/netflix-screenshot.png"
+              alt="Netflix clone scrrenshot"
+            />
+          </div>
+          <div class="project-information">
+            <div class="project-heading">
+              <h4>Netflix clone</h4>
+              <h5>A clone of Netflix's landing page from mid 2020</h5>
+            </div>
+            <ul class="project-description">
+              <li>Showcases Responsive web design.</li>
+              <li>
+                Uses a Javascript / Css library called
+              </li>
+            </ul>
           </div>
         </a>
         <a
@@ -108,14 +139,21 @@
           target="_blank"
           title="Just some paint"
         >
+         <div class="project-img">
           <img
-            class="project-img"
-            src="/resources/some-paint-screenshot.png"
-            alt="Application screenshot"
-          />
-          <div class="desc">
-            <h4>Some Paint</h4>
-            <p>A simple paint application</p>
+          src="/resources/some-paint-screenshot.png"
+          alt="Application screenshot"
+        />
+         </div>
+          <div class="project-information">
+            <div class="project-heading">
+              <h4>Some Paint</h4>
+              <h5>- A simple paint application</h5>
+            </div>
+            <ul class="project-description">
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </a>
         <a
@@ -124,14 +162,21 @@
           target="_blank"
           title="MDBU-M001"
         >
-          <img
-            class="project-img"
+          <div class="project-img">
+            <img
             src="/resources/M001-tech-screenshot.png"
             alt="M001 page screenshot"
           />
-          <div class="desc">
-            <h4>Technical Documnet</h4>
-            <p>MongoDB University - M001 - course notes</p>
+          </div>
+          <div class="project-information">
+            <div class="project-heading">
+              <h4>Technical Documnet</h4>
+              <h5>- inspired by MDBU UI</h5>
+            </div>
+            <ul class="project-description">
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </a>
         <!--** Tile Template  -->
