@@ -62,8 +62,10 @@ section {
 }
 
 .header-content {
+  font-size: 1.1rem;
   display: flex;
-  margin: 1rem;
+  padding: 0 1rem;
+  margin: auto;
   max-width: 69rem;
 
 }
@@ -72,13 +74,13 @@ section {
   place-items: center;
 }
 .nav-name h3 {
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
 .nav{
  display: flex;
- margin:0 10% 0 auto;
+ margin-left: auto;
 }
 
 .nav-link:nth-child(1){
@@ -163,7 +165,7 @@ h2 {
 .welcome-title-two span:nth-child(2){
   animation:  fadein 7s linear;
 }
-.welcome-title-one span:nth-child(4),
+.welcome-title-one span:nth-child(3),
 .welcome-title-two span:first-child {
   animation:  fadein-special 3s linear;
 }
@@ -274,7 +276,7 @@ h2 {
   }
   .welcome-title {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0;
   }
  
   .welcome-title span {
@@ -289,12 +291,5 @@ h2 {
     padding: 0.5rem;
   }
 
-  .nav-bar {
-    position: relative;
-  }
-
-  .nav {
-    margin: 0 auto;
-  }
 }
 
