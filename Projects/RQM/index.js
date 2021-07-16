@@ -40,15 +40,15 @@ const [color, setColor] = React.useState("#919b91");
       <div style={{backgroundColor:color, height: "100vh"}}>
           <div className='container pt-5' >
       <div className='card' style={{color: color}}>
-        <div className='card-body'>
+        <div className='card-body' id="quote-box">
           {randomQuote ? (
             <>
-              <p className='card-text'>
+              <p className='card-text' id="text">
                 <i className='fa fa-quote-left'></i>
                 {"  "}
                 {randomQuote.quote} <i className='fa fa-quote-right'></i>
               </p>
-              <h6 className='card-subtitle'>
+              <h6 className='card-subtitle' id="author">
                 - {randomQuote.author || "unknown"}
               </h6>
             </>
@@ -57,13 +57,13 @@ const [color, setColor] = React.useState("#919b91");
           )}
 
           <div className='links'>
-            <a href='#' target='_blank' className=' btn btn-twitter'>
+            <a href="twitter.com/intent/tweet" target='_blank' className=' btn btn-twitter' id="tweet-quote">
               <i className='fa fa-twitter'></i>
             </a>
-            <a href='#' target='_blank' className='btn btn-tumblr'>
+            <a href='#' target='_blank' className='btn btn-tumblr' id="tumblr-quote">
               <i className='fa fa-tumblr'></i>
             </a>
-            <button onClick={getNewQuote} className=' btn btn-warning'>
+            <button onClick={getNewQuote} className=' btn btn-warning' id="new-quote">
               New Quote
             </button>
           </div>
