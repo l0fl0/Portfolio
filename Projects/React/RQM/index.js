@@ -1,7 +1,7 @@
 function RandomQuoteMachine() {
   const [quotes, setQuotes] = React.useState([]);
   const [randomQuote, setRandomQuote] = React.useState("");
-const [color, setColor] = React.useState("#919b91");
+  const [color, setColor] = React.useState("#919b91");
 
   React.useEffect(() => {
     async function fetchData() {
