@@ -23,13 +23,20 @@ body {
 .container .toolbar {
   border: 2px solid #333;
   background-color: gainsboro;
+  position: relative;
 }
 .container .toolbar h3 {
   display: inline;
 }
 .container .toolbar i {
-  margin-right: auto;
   padding: 0.3rem;
+}
+.container .toolbar .maximizeWindow {
+  position: absolute;
+  right: 0;
+}
+.container .toolbar .maximizeWindow:hover {
+  color: whitesmoke;
 }
 .container .editor {
   min-height: 30vh;

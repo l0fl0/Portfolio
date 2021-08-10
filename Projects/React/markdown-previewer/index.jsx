@@ -8,27 +8,39 @@ marked.setOptions({
 
 function MarkdownPreviewer() {
   const [markdown, setMarkdown] = React.useState(placeholder);
+  const [previewWindow, setPreviewWindow] = React.useState()
 
   const updateMarkdown = (rawMarkdown) => {
     setMarkdown(rawMarkdown);
   };
 
+  const windowFunc =  () => {
+    //Create an Or gate on click 
+    console.log("We are ready!")
+  }
+
   return (
-      <div className='container '> 
-        <div className='editor'>
-          <Toolbar icon='fa fa-marker' text='Editor' />
-          <Editor
-            markdown={markdown}
-            onChange={(e) => {
-              updateMarkdown(e.target.value);
-            }}
-          />
-        </div>
-        <div className='previewer'>
-          <Toolbar icon='fab fa-markdown' text='Preview' />
-          <Preview markdown={marked(markdown)} />
-        </div>
+    <div className='container '>
+      <div className='editor'>
+        <Toolbar icon='fa fa-marker' text='Editor' />
+        <Editor
+          markdown={markdown}
+          onChange={(e) => {
+            updateMarkdown(e.target.value);
+          }}
+        />
       </div>
+      <div className='previewer'>
+        <Toolbar
+          icon='fab fa-markdown'
+          text='Preview'
+          iconMaximize='fas fa-expand maximizeWindow'
+          titleMaximize='Maximize Window'
+          onClick={windowFunc}
+        />
+        <Preview markdown={marked(markdown)} />
+      </div>
+    </div>
   );
 }
 
@@ -39,7 +51,10 @@ const Toolbar = (props) => {
     <div className='toolbar'>
       <i className={props.icon}></i>
       <h3>{props.text}</h3>
-      {/* <i className={props.icon} onclick={props.onClick}></i> */}
+      <i className={props.iconMaximize} 
+      title={props.titleMaximize} 
+      onClick={props.onClick}
+      ></i>
     </div>
   );
 };
