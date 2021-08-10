@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  font-family: "Monserrat", Geneva, Tahoma, sans-serif;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 30rem 1fr;
+  gap: 2rem;
+  padding: 1rem;
+  width: calc(var(--vw, 1vw) * 100);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.container .hide {
+  display: none;
+}
+.container .toolbar {
+  border: 2px solid #333;
+  background-color: gainsboro;
+}
+.container .toolbar h3 {
+  display: inline;
+}
+.container .toolbar i {
+  margin-right: auto;
+  padding: 0.3rem;
+}
+.container .editor {
+  min-height: 30vh;
+  max-height: 100vh;
+}
+.container .editor textarea {
+  font-family: "inconsolata", monospace;
+  border: 2px solid #333;
+  border-top: none;
+  min-height: 30vh;
+  max-height: 90vh;
+  width: 97.5%;
+  background-color: gainsboro;
+  resize: vertical;
+  margin: 0;
+  padding: 0.5rem 0 0 0.5rem;
+}
+.container .editor textarea:focus {
+  outline: none;
+}
+.container .previewer {
+  max-height: 100vh;
+  overflow-wrap: break-word;
+}
+.container .previewer .preview {
+  color: #333;
+  background-color: gainsboro;
+  min-height: 30vh;
+  max-height: 85vh;
+  border: 2px solid #333;
+  border-top: none;
+  padding: 1rem;
+  overflow: scroll;
+}
+.container .previewer .preview blockquote {
+  border-left: 3px solid #224b4b;
+  color: #224b4b;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+.container .previewer .preview > p > code {
+  padding: 3px;
+}
+.container .previewer .preview code {
+  background: whitesmoke;
+  font-size: 0.875rem;
+  color: #000;
+  font-family: "inconsolata", monospace;
+}
+.container .previewer .preview pre {
+  font-family: "inconsolata", monospace;
+  display: block;
+  overflow: auto;
+  background: whitesmoke;
+  padding: 5px;
+  line-height: 1.5;
+}
+.container .previewer .preview h1 {
+  border-bottom: 2px solid #333;
+}
+.container .previewer .preview h2 {
+  border-bottom: 1px solid #333;
+}
+.container .previewer .preview table {
+  border-collapse: collapse;
+}
+.container .previewer .preview td,
+.container .previewer .preview th {
+  border: 2px solid #333;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.container .previewer .preview a {
+  text-decoration: underline;
+}
+.container .previewer .preview img {
+  display: block;
+  max-width: 50%;
+  margin: 2rem auto;
+}
+
+body {
+  background-color: #000;
+}
+
+.darkMode {
+  background-color: #000;
+}
+.darkMode .toolbar {
+  background: #2d2d2d;
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+}
+.darkMode .editor textarea {
+  background: #2d2d2d;
+  color: whitesmoke;
+}
+.darkMode .previewer .preview {
+  background: #2d2d2d;
+  color: whitesmoke;
+  border: 2px solid #333;
+}
+.darkMode .previewer .preview code {
+  color: whitesmoke;
+  background: #333;
+}
+.darkMode .previewer .preview pre {
+  color: whitesmoke;
+  background: #333;
+}
+.darkMode .previewer .preview a {
+  color: #ff69b4;
+}
+.darkMode .previewer .preview blockquote {
+  border-left: 3px solid #48a3a3;
+  color: #48a3a3;
+}
+.darkMode .previewer .preview h1 {
+  border-bottom: 2px solid white;
+}
+.darkMode .previewer .preview h2 {
+  border-bottom: 1px solid white;
+}
+.darkMode .previewer .preview td,
+.darkMode .previewer .preview th {
+  border: 2px solid gainsboro;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: none;
+    gap: 1rem;
+    overflow-wrap: break-word;
+    max-width: 1200px;
+    margin: 1rem;
+  }
+  .container .editor {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  .container .editor textarea {
+    resize: none;
+    max-height: 30vh;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

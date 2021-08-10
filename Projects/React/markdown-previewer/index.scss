@@ -1,0 +1,212 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$darkBackground: #2d2d2d;
+$darkAccent: #333;
+$darkColor: #000;
+
+$lightBackground: gainsboro;
+$lightAccent: whitesmoke;
+$lightColor: white;
+
+$codeFont: 'inconsolata', monospace;
+$lightBorder: 2px solid $lightAccent;
+$darkBorder: 2px solid $darkAccent;
+
+// $color: ;
+// $accent: ;
+// $background: ;
+
+* {
+  font-family: "Monserrat", Geneva, Tahoma, sans-serif;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 30rem 1fr;
+  gap: 2rem;
+  padding: 1rem;
+  width: calc(var(--vw, 1vw) * 100);
+  max-width: 100%;
+  box-sizing: border-box;
+  .hide {
+    display: none;
+  }
+  .toolbar {
+    border: $darkBorder;
+    background-color: $lightBackground;
+    h3 {
+      display: inline;
+    }
+    i {
+      margin-right: auto;
+      padding: 0.3rem;
+    }
+  }
+  .editor {
+    min-height: 30vh;
+    max-height: 100vh;
+    
+    textarea { 
+      font-family: $codeFont;
+      border: $darkBorder;
+      border-top: none;
+      min-height: 30vh;
+      max-height: 90vh;
+      width: 97.5%;
+      background-color: $lightBackground;
+      resize: vertical;
+      margin: 0;
+      padding: 0.5rem 0 0 0.5rem;
+      
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .previewer {
+    max-height: 100vh;
+    overflow-wrap: break-word;
+    .preview {
+      color: $darkAccent;
+      background-color: $lightBackground;
+      min-height: 30vh;
+      max-height: 85vh;
+      border: $darkBorder;
+      border-top: none;
+      padding: 1rem;
+      overflow: scroll;
+      blockquote {
+        border-left: 3px solid #224b4b;
+        color: #224b4b;
+        padding-left: 5px;
+        margin-left: 25px;
+      }
+
+      > p > code {
+        padding: 3px;
+      }
+
+      code {
+        background: $lightAccent;
+        font-size: 0.875rem;
+        color: $darkColor;
+        font-family: $codeFont;
+      }
+
+      pre {
+        font-family: $codeFont;
+        display: block;
+        overflow: auto;
+        background: $lightAccent;
+        padding: 5px;
+        line-height: 1.5;
+      }
+
+      h1 {
+        border-bottom: 2px solid $darkAccent;
+      }
+
+      h2 {
+        border-bottom: 1px solid $darkAccent;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        border: 2px solid $darkAccent;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      img {
+        display: block;
+        max-width: 50%;
+        margin: 2rem auto;
+      }
+    }
+  }
+}
+body{
+  background-color: #000;
+
+}
+
+.darkMode {
+  background-color: #000;
+    .toolbar {
+      background: $darkBackground;
+      color: $lightAccent;
+      border: $lightBorder;
+    }
+    .editor textarea {
+      background: $darkBackground;
+      color:$lightAccent;
+    }
+    .previewer .preview {
+      background: $darkBackground;
+      color:$lightAccent;
+      border: $darkBorder;
+      code {
+        color: $lightAccent;
+        background: $darkAccent;
+      }
+      pre {
+        color: $lightAccent;
+        background: $darkAccent;
+      }
+      a{
+        color: #ff69b4
+      }
+      blockquote {
+        border-left: 3px solid #48a3a3;
+        color: #48a3a3;
+      }
+      h1 {
+        border-bottom: 2px solid $lightColor;
+      }
+
+      h2 {
+        border-bottom: 1px solid $lightColor;
+      }
+      td,
+      th {
+        border: 2px solid $lightBackground;
+      }
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+
+  .container {
+    display: grid;
+    grid-template-columns: none;
+    gap: 1rem;
+    overflow-wrap: break-word;
+    max-width: 1200px;
+    margin: 1rem;
+    .editor {
+      margin-right: 0;
+      max-width: 100%;
+      width: 100%;
+      textarea {
+        resize: none;
+        max-height: 30vh;
+      }
+    }
+  }
+}
