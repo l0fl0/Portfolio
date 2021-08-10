@@ -27,13 +27,12 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 30rem 1fr;
-  gap: 2rem;
   padding: 1rem;
   width: calc(var(--vw, 1vw) * 100);
-  max-width: 100%;
   box-sizing: border-box;
+  .maximize {
+    width: 100%;
+  }
   .hide {
     display: none;
   }
@@ -46,14 +45,14 @@ body {
     }
     i {
      padding: 0.3rem;
-    }
-    .maximizeWindow {
+    &:last-of-type {
       position: absolute;
       right: 0;
       &:hover {
         color: $lightAccent;
       }
     }
+  }
   }
   .editor {
     min-height: 30vh;
@@ -204,7 +203,6 @@ body{
     grid-template-columns: none;
     gap: 1rem;
     overflow-wrap: break-word;
-    max-width: 1200px;
     margin: 1rem;
     .editor {
       margin-right: 0;

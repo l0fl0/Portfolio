@@ -9,13 +9,12 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 30rem 1fr;
-  gap: 2rem;
   padding: 1rem;
   width: calc(var(--vw, 1vw) * 100);
-  max-width: 100%;
   box-sizing: border-box;
+}
+.container .maximize {
+  width: 100%;
 }
 .container .hide {
   display: none;
@@ -31,11 +30,11 @@ body {
 .container .toolbar i {
   padding: 0.3rem;
 }
-.container .toolbar .maximizeWindow {
+.container .toolbar i:last-of-type {
   position: absolute;
   right: 0;
 }
-.container .toolbar .maximizeWindow:hover {
+.container .toolbar i:last-of-type:hover {
   color: whitesmoke;
 }
 .container .editor {
@@ -171,7 +170,6 @@ body {
     grid-template-columns: none;
     gap: 1rem;
     overflow-wrap: break-word;
-    max-width: 1200px;
     margin: 1rem;
   }
   .container .editor {

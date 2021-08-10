@@ -8,21 +8,36 @@ marked.setOptions({
 
 function MarkdownPreviewer() {
   const [markdown, setMarkdown] = React.useState(placeholder);
-  const [previewWindow, setPreviewWindow] = React.useState()
+  const [previewWindow, setPreviewWindow] = React.useState(false);
+  const [editorWindow, setEditorWindow] = React.useState(false);
 
   const updateMarkdown = (rawMarkdown) => {
     setMarkdown(rawMarkdown);
   };
 
-  const windowFunc =  () => {
-    //Create an Or gate on click 
-    console.log("We are ready!")
+  const handleEditorMaximize =  () => {
+    setEditorWindow(!editorWindow)
+  }
+  const handlePreviewMaximize = () => {
+    setPreviewWindow(!previewWindow)
   }
 
+  const classes = editorWindow
+      ? ['editor maximized', 'previewer hide', 'fa fa-compress-alt', 'Minimize Window']
+      : previewWindow
+      ? ['editor hide', 'previewer maximized', 'fa fa-compress-alt', 'Minimize Window']
+      : ['editor', 'previewer', 'fas fa-expand', 'Maximize Window'];
   return (
-    <div className='container '>
-      <div className='editor'>
-        <Toolbar icon='fa fa-marker' text='Editor' />
+    <div className='container'>
+      <div id="textEditor" className={classes[0]}>
+        <Toolbar 
+        icon='fa fa-marker' 
+        text='Text Editor'
+        iconResize={classes[2]}
+        titleResize={classes[3]}
+        onClick={handleEditorMaximize}
+
+        />
         <Editor
           markdown={markdown}
           onChange={(e) => {
@@ -30,13 +45,13 @@ function MarkdownPreviewer() {
           }}
         />
       </div>
-      <div className='previewer'>
+      <div id="previewer" className={classes[1]}>
         <Toolbar
           icon='fab fa-markdown'
           text='Preview'
-          iconMaximize='fas fa-expand maximizeWindow'
-          titleMaximize='Maximize Window'
-          onClick={windowFunc}
+          iconResize={classes[2]}
+          titleResize={classes[3]}
+          onClick={handlePreviewMaximize}
         />
         <Preview markdown={marked(markdown)} />
       </div>
@@ -51,8 +66,8 @@ const Toolbar = (props) => {
     <div className='toolbar'>
       <i className={props.icon}></i>
       <h3>{props.text}</h3>
-      <i className={props.iconMaximize} 
-      title={props.titleMaximize} 
+      <i className={props.iconResize} 
+      title={props.titleResize} 
       onClick={props.onClick}
       ></i>
     </div>
