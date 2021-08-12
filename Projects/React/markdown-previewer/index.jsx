@@ -2,10 +2,8 @@ marked.setOptions({
   breaks: true,
   highlight: function (code) {
     return Prism.highlight(code, Prism.languages.javascript, "javascript");
-    return Prism.highlight(code, Prism.languages.markdown, "markdown");
   },
 });
-
 function MarkdownPreviewer() {
   const [markdown, setMarkdown] = React.useState(placeholder);
   const [previewWindow, setPreviewWindow] = React.useState(false);
@@ -22,21 +20,22 @@ function MarkdownPreviewer() {
     setPreviewWindow(!previewWindow)
   }
 
-  const classes = editorWindow
-      ? ['editor maximized', 'previewer hide', 'fa fa-compress-alt', 'Minimize Window']
+  const stylesForMaximizeOnClick = editorWindow
+      ? ['editor maximized maximizeTextarea', 'previewer hide', 'fa fa-compress-alt', 'Minimize Window', 'maximizeTextarea']
       : previewWindow
       ? ['editor hide', 'previewer maximized', 'fa fa-compress-alt', 'Minimize Window']
       : ['editor', 'previewer', 'fas fa-expand', 'Maximize Window'];
+
+
   return (
     <div className='container'>
-      <div id="textEditor" className={classes[0]}>
+      <div id="textEditor" className={stylesForMaximizeOnClick[0]}>
         <Toolbar 
         icon='fa fa-marker' 
         text='Text Editor'
-        iconResize={classes[2]}
-        titleResize={classes[3]}
+        iconResize={stylesForMaximizeOnClick[2]}
+        titleResize={stylesForMaximizeOnClick[3]}
         onClick={handleEditorMaximize}
-
         />
         <Editor
           markdown={markdown}
@@ -45,12 +44,12 @@ function MarkdownPreviewer() {
           }}
         />
       </div>
-      <div id="previewer" className={classes[1]}>
+      <div id="previewer" className={stylesForMaximizeOnClick[1]}>
         <Toolbar
           icon='fab fa-markdown'
           text='Preview'
-          iconResize={classes[2]}
-          titleResize={classes[3]}
+          iconResize={stylesForMaximizeOnClick[2]}
+          titleResize={stylesForMaximizeOnClick[3]}
           onClick={handlePreviewMaximize}
         />
         <Preview markdown={marked(markdown)} />
@@ -76,12 +75,13 @@ const Toolbar = (props) => {
 
 const Editor = (props) => {
   return (
-    <textarea
+      <textarea
       id='editor'
       onChange={props.onChange}
       type='text'
       value={props.markdown}
     />
+    
   );
 };
 
@@ -105,10 +105,15 @@ Heres some code, \`<div></div>\`, between 2 backticks.
 \`\`\`
 // this is multi-line code:
 
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
+const updateMarkdown = (rawMarkdown) => {
+  setMarkdown(rawMarkdown);
+};
+
+const handleEditorMaximize =  () => {
+  setEditorWindow(!editorWindow)
+}
+const handlePreviewMaximize = () => {
+  setPreviewWindow(!previewWindow)
 }
 \`\`\`
 
