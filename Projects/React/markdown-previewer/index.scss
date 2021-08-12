@@ -7,12 +7,12 @@ $darkAccent: #333;
 $darkColor: #000;
 
 $lightBackground: gainsboro;
-$lightAccent: whitesmoke;
-$lightColor: white;
+$lightAccent: grey;
+$lightColor: whitesmoke;
 
 $codeFont: 'inconsolata', monospace;
-$lightBorder: 2px solid $lightAccent;
-$darkBorder: 2px solid $darkAccent;
+$lightBorder: 2px solid $lightColor;
+$darkBorder: 2px solid $darkColor;
 
 // $color: ;
 // $accent: ;
@@ -24,21 +24,25 @@ $darkBorder: 2px solid $darkAccent;
 
 body {
   line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  background-color: $darkBackground;
 }
 
 .container {
-  padding: 1rem;
-  width: calc(var(--vw, 1vw) * 100);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  max-width: 1200px;
   box-sizing: border-box;
-  .maximize {
-    width: 100%;
+  .maximized {
+    height: 100%;
   }
   .hide {
     display: none;
   }
   .toolbar {
     border: $darkBorder;
-    background-color: $lightBackground;
+    background-color: $lightColor;
     position: relative;
     h3 {
       display: inline;
@@ -56,37 +60,33 @@ body {
   }
   .editor {
     min-height: 30vh;
-    max-height: 100vh;
-    
+    max-width: 1200px;
+    margin-bottom: 1rem;
     textarea { 
       font-family: $codeFont;
       border: $darkBorder;
       border-top: none;
       min-height: 30vh;
-      max-height: 90vh;
-      width: 97.5%;
+      width: 100%;
+      box-sizing: border-box;
       background-color: $lightBackground;
       resize: vertical;
       margin: 0;
-      padding: 0.5rem 0 0 0.5rem;
-      
+      padding: 1rem;
       &:focus {
         outline: none;
       }
     }
   }
   .previewer {
-    max-height: 100vh;
     overflow-wrap: break-word;
     .preview {
       color: $darkAccent;
       background-color: $lightBackground;
       min-height: 30vh;
-      max-height: 85vh;
       border: $darkBorder;
       border-top: none;
       padding: 1rem;
-      overflow: scroll;
       blockquote {
         border-left: 3px solid #224b4b;
         color: #224b4b;
@@ -99,9 +99,9 @@ body {
       }
 
       code {
-        background: $lightAccent;
+        background: $darkAccent;
         font-size: 0.875rem;
-        color: $darkColor;
+        color: $lightColor;
         font-family: $codeFont;
       }
 
@@ -109,7 +109,7 @@ body {
         font-family: $codeFont;
         display: block;
         overflow: auto;
-        background: $lightAccent;
+        background: $darkAccent;
         padding: 5px;
         line-height: 1.5;
       }
@@ -145,72 +145,19 @@ body {
     }
   }
 }
-body{
-  background-color: #000;
-
-}
-
-.darkMode {
-  background-color: #000;
-    .toolbar {
-      background: $darkBackground;
-      color: $lightAccent;
-      border: $lightBorder;
-    }
-    .editor textarea {
-      background: $darkBackground;
-      color:$lightAccent;
-    }
-    .previewer .preview {
-      background: $darkBackground;
-      color:$lightAccent;
-      border: $darkBorder;
-      code {
-        color: $lightAccent;
-        background: $darkAccent;
-      }
-      pre {
-        color: $lightAccent;
-        background: $darkAccent;
-      }
-      a{
-        color: #ff69b4
-      }
-      blockquote {
-        border-left: 3px solid #48a3a3;
-        color: #48a3a3;
-      }
-      h1 {
-        border-bottom: 2px solid $lightColor;
-      }
-
-      h2 {
-        border-bottom: 1px solid $lightColor;
-      }
-      td,
-      th {
-        border: 2px solid $lightBackground;
-      }
-    }
-}
 
 
-
-@media (max-width: 1200px) {
-
+@media (max-width: 900px) {
+  
   .container {
-    display: grid;
-    grid-template-columns: none;
-    gap: 1rem;
-    overflow-wrap: break-word;
-    margin: 1rem;
+    padding: 0 0.3rem;
+    .maximizeTextarea {
+      height: 90vh;
+    }
     .editor {
-      margin-right: 0;
-      max-width: 100%;
-      width: 100%;
       textarea {
+        height: 100%;
         resize: none;
-        max-height: 30vh;
       }
     }
   }

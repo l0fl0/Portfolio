@@ -6,22 +6,26 @@
 
 body {
   line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  background-color: #2d2d2d;
 }
 
 .container {
-  padding: 1rem;
-  width: calc(var(--vw, 1vw) * 100);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  max-width: 1200px;
   box-sizing: border-box;
 }
-.container .maximize {
-  width: 100%;
+.container .maximized {
+  height: 100%;
 }
 .container .hide {
   display: none;
 }
 .container .toolbar {
-  border: 2px solid #333;
-  background-color: gainsboro;
+  border: 2px solid #000;
+  background-color: whitesmoke;
   position: relative;
 }
 .container .toolbar h3 {
@@ -35,40 +39,38 @@ body {
   right: 0;
 }
 .container .toolbar i:last-of-type:hover {
-  color: whitesmoke;
+  color: grey;
 }
 .container .editor {
   min-height: 30vh;
-  max-height: 100vh;
+  max-width: 1200px;
+  margin-bottom: 1rem;
 }
 .container .editor textarea {
   font-family: "inconsolata", monospace;
-  border: 2px solid #333;
+  border: 2px solid #000;
   border-top: none;
   min-height: 30vh;
-  max-height: 90vh;
-  width: 97.5%;
+  width: 100%;
+  box-sizing: border-box;
   background-color: gainsboro;
   resize: vertical;
   margin: 0;
-  padding: 0.5rem 0 0 0.5rem;
+  padding: 1rem;
 }
 .container .editor textarea:focus {
   outline: none;
 }
 .container .previewer {
-  max-height: 100vh;
   overflow-wrap: break-word;
 }
 .container .previewer .preview {
   color: #333;
   background-color: gainsboro;
   min-height: 30vh;
-  max-height: 85vh;
-  border: 2px solid #333;
+  border: 2px solid #000;
   border-top: none;
   padding: 1rem;
-  overflow: scroll;
 }
 .container .previewer .preview blockquote {
   border-left: 3px solid #224b4b;
@@ -80,16 +82,16 @@ body {
   padding: 3px;
 }
 .container .previewer .preview code {
-  background: whitesmoke;
+  background: #333;
   font-size: 0.875rem;
-  color: #000;
+  color: whitesmoke;
   font-family: "inconsolata", monospace;
 }
 .container .previewer .preview pre {
   font-family: "inconsolata", monospace;
   display: block;
   overflow: auto;
-  background: whitesmoke;
+  background: #333;
   padding: 5px;
   line-height: 1.5;
 }
@@ -117,69 +119,16 @@ body {
   margin: 2rem auto;
 }
 
-body {
-  background-color: #000;
-}
-
-.darkMode {
-  background-color: #000;
-}
-.darkMode .toolbar {
-  background: #2d2d2d;
-  color: whitesmoke;
-  border: 2px solid whitesmoke;
-}
-.darkMode .editor textarea {
-  background: #2d2d2d;
-  color: whitesmoke;
-}
-.darkMode .previewer .preview {
-  background: #2d2d2d;
-  color: whitesmoke;
-  border: 2px solid #333;
-}
-.darkMode .previewer .preview code {
-  color: whitesmoke;
-  background: #333;
-}
-.darkMode .previewer .preview pre {
-  color: whitesmoke;
-  background: #333;
-}
-.darkMode .previewer .preview a {
-  color: #ff69b4;
-}
-.darkMode .previewer .preview blockquote {
-  border-left: 3px solid #48a3a3;
-  color: #48a3a3;
-}
-.darkMode .previewer .preview h1 {
-  border-bottom: 2px solid white;
-}
-.darkMode .previewer .preview h2 {
-  border-bottom: 1px solid white;
-}
-.darkMode .previewer .preview td,
-.darkMode .previewer .preview th {
-  border: 2px solid gainsboro;
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .container {
-    display: grid;
-    grid-template-columns: none;
-    gap: 1rem;
-    overflow-wrap: break-word;
-    margin: 1rem;
+    padding: 0 0.3rem;
   }
-  .container .editor {
-    margin-right: 0;
-    max-width: 100%;
-    width: 100%;
+  .container .maximizeTextarea {
+    height: 90vh;
   }
   .container .editor textarea {
+    height: 100%;
     resize: none;
-    max-height: 30vh;
   }
 }
 
