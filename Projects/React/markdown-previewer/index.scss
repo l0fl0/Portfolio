@@ -33,7 +33,7 @@ body {
   margin: 0 auto;
   padding: 1rem 2rem;
   max-width: 1200px;
-  box-sizing: border-box;
+  
   .maximized {
     height: 100%;
   }
@@ -41,9 +41,9 @@ body {
     display: none;
   }
   .toolbar {
+    position: relative;
     border: $darkBorder;
     background-color: $lightColor;
-    position: relative;
     h3 {
       display: inline;
     }
@@ -58,6 +58,9 @@ body {
     }
   }
   }
+  .maximizeTextarea {
+    height: 98vh;
+  }
   .editor {
     min-height: 30vh;
     max-width: 1200px;
@@ -67,6 +70,7 @@ body {
       border: $darkBorder;
       border-top: none;
       min-height: 30vh;
+      height: 100%;
       width: 100%;
       box-sizing: border-box;
       background-color: $lightBackground;
@@ -151,9 +155,7 @@ body {
   
   .container {
     padding: 0 0.3rem;
-    .maximizeTextarea {
-      height: 90vh;
-    }
+    
     .editor {
       textarea {
         height: 100%;

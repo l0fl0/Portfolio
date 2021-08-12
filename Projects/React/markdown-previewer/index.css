@@ -15,7 +15,6 @@ body {
   margin: 0 auto;
   padding: 1rem 2rem;
   max-width: 1200px;
-  box-sizing: border-box;
 }
 .container .maximized {
   height: 100%;
@@ -24,9 +23,9 @@ body {
   display: none;
 }
 .container .toolbar {
+  position: relative;
   border: 2px solid #000;
   background-color: whitesmoke;
-  position: relative;
 }
 .container .toolbar h3 {
   display: inline;
@@ -41,6 +40,9 @@ body {
 .container .toolbar i:last-of-type:hover {
   color: grey;
 }
+.container .maximizeTextarea {
+  height: 98vh;
+}
 .container .editor {
   min-height: 30vh;
   max-width: 1200px;
@@ -51,6 +53,7 @@ body {
   border: 2px solid #000;
   border-top: none;
   min-height: 30vh;
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
   background-color: gainsboro;
@@ -122,9 +125,6 @@ body {
 @media (max-width: 900px) {
   .container {
     padding: 0 0.3rem;
-  }
-  .container .maximizeTextarea {
-    height: 90vh;
   }
   .container .editor textarea {
     height: 100%;
