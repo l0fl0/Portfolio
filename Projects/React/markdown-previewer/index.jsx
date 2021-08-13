@@ -13,12 +13,18 @@ function MarkdownPreviewer() {
     setMarkdown(rawMarkdown);
   };
 
+  const clearMarkdown = () => {
+    setMarkdown('');
+  }
+
   const handleEditorMaximize = () => {
     setEditorWindow(!editorWindow);
   };
   const handlePreviewMaximize = () => {
     setPreviewWindow(!previewWindow);
   };
+
+  
 
   const stylesForMaximizeOnClick = editorWindow
     ? [
@@ -46,6 +52,10 @@ function MarkdownPreviewer() {
           iconResize={stylesForMaximizeOnClick[2]}
           titleResize={stylesForMaximizeOnClick[3]}
           onClick={handleEditorMaximize}
+          iconClear='fas fa-eraser'
+          titleClear='Clear Text'
+          onClickClear={clearMarkdown}
+
         />
         <Editor
           markdown={markdown}
@@ -53,6 +63,7 @@ function MarkdownPreviewer() {
             updateMarkdown(e.target.value);
           }}
         />
+        
       </div>
       <div id='previewer' className={stylesForMaximizeOnClick[1]}>
         <Toolbar
@@ -76,6 +87,11 @@ const Toolbar = (props) => {
       <i className={props.icon}></i>
       <h3>{props.text}</h3>
       <i
+        className={props.iconClear}
+        title={props.titleClear}
+        onClick={props.onClickClear}
+      ></i>
+      <i
         className={props.iconResize}
         title={props.titleResize}
         onClick={props.onClick}
@@ -86,12 +102,13 @@ const Toolbar = (props) => {
 
 const Editor = (props) => {
   return (
-    <textarea
-      id='editor'
-      onChange={props.onChange}
-      type='text'
-      value={props.markdown}
-    />
+      <textarea
+    id='editor'
+    onChange={props.onChange}
+    type='text'
+    value={props.markdown}
+    placeholder="Type Markdown Here."
+  />   
   );
 };
 

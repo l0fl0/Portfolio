@@ -14,10 +14,12 @@ body {
 .container {
   margin: 0 auto;
   padding: 1rem 2rem;
-  max-width: 1200px;
+  max-width: 1600px;
+  display: flex;
+  justify-content: center;
 }
 .container .maximized {
-  height: 100%;
+  width: 100%;
 }
 .container .hide {
   display: none;
@@ -44,16 +46,16 @@ body {
   height: 98vh;
 }
 .container .editor {
-  min-height: 30vh;
+  position: relative;
+  flex: 1 2 300px;
   max-width: 1200px;
-  margin-bottom: 1rem;
+  margin-right: 0.5rem;
 }
 .container .editor textarea {
   font-family: "inconsolata", monospace;
   border: 2px solid #000;
   border-top: none;
   min-height: 30vh;
-  height: 100%;
   width: 100%;
   box-sizing: border-box;
   background-color: gainsboro;
@@ -65,15 +67,17 @@ body {
   outline: none;
 }
 .container .previewer {
+  max-width: 1200px;
+  flex: 1 0 450px;
   overflow-wrap: break-word;
 }
 .container .previewer .preview {
   color: #333;
   background-color: gainsboro;
-  min-height: 30vh;
   border: 2px solid #000;
   border-top: none;
-  padding: 1rem;
+  padding: 0.5rem;
+  min-height: 30vh;
 }
 .container .previewer .preview blockquote {
   border-left: 3px solid #224b4b;
@@ -85,6 +89,7 @@ body {
   padding: 3px;
 }
 .container .previewer .preview code {
+  overflow: scroll;
   background: #333;
   font-size: 0.875rem;
   color: whitesmoke;
@@ -122,13 +127,22 @@ body {
   margin: 2rem auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .container {
     padding: 0 0.3rem;
+    flex-direction: column;
+  }
+  .container .editor {
+    margin: 1rem 0 1rem;
+    flex: auto;
   }
   .container .editor textarea {
-    height: 100%;
+    height: 95%;
     resize: none;
+  }
+  .container .previewer {
+    margin-top: 1rem;
+    flex: auto;
   }
 }
 

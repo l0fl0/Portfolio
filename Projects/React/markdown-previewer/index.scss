@@ -32,10 +32,11 @@ body {
 .container {
   margin: 0 auto;
   padding: 1rem 2rem;
-  max-width: 1200px;
-  
+  max-width: 1600px;
+  display: flex;
+  justify-content: center;
   .maximized {
-    height: 100%;
+    width: 100%;
   }
   .hide {
     display: none;
@@ -62,15 +63,15 @@ body {
     height: 98vh;
   }
   .editor {
-    min-height: 30vh;
+    position: relative;
+    flex: 1 2 300px;
     max-width: 1200px;
-    margin-bottom: 1rem;
+    margin-right: 0.5rem;
     textarea { 
       font-family: $codeFont;
       border: $darkBorder;
       border-top: none;
       min-height: 30vh;
-      height: 100%;
       width: 100%;
       box-sizing: border-box;
       background-color: $lightBackground;
@@ -83,14 +84,16 @@ body {
     }
   }
   .previewer {
+    max-width: 1200px;
+    flex: 1 0 450px ;
     overflow-wrap: break-word;
     .preview {
       color: $darkAccent;
       background-color: $lightBackground;
-      min-height: 30vh;
       border: $darkBorder;
       border-top: none;
-      padding: 1rem;
+      padding: 0.5rem;
+      min-height: 30vh;
       blockquote {
         border-left: 3px solid #224b4b;
         color: #224b4b;
@@ -103,6 +106,7 @@ body {
       }
 
       code {
+        overflow: scroll;
         background: $darkAccent;
         font-size: 0.875rem;
         color: $lightColor;
@@ -151,16 +155,22 @@ body {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   
   .container {
     padding: 0 0.3rem;
-    
+    flex-direction: column;
     .editor {
+      margin: 1rem 0 1rem;
+      flex: auto;
       textarea {
-        height: 100%;
+        height: 95%;
         resize: none;
       }
+    }
+    .previewer {
+      margin-top: 1rem;
+      flex: auto; 
     }
   }
 }
