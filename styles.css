@@ -242,25 +242,59 @@ h2 {
   font-size: 1rem;
 }
 
+/* Farewell */
 
+
+.coffee-and-lofi {
+  margin: 5rem 0;
+  text-align: center;
+  place-items: center;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.coffee-and-lofi p {
+  font-size: 1.3rem;
+  color: var(--light-color);
+}
 
 /* contact information */
 
 #contact-info {
   height: max-content;
+  padding: 2rem 0 5rem;
+
 }
 .contact-container {
   max-height: 70vh;
-  margin: 5rem 0;
   text-align: center;
   display: flex;
   flex-direction: column;
+  place-items: center;
+  
 }
-.contact-container p {
-  margin-top: 1rem;
-  font-size: 1.3rem;
-  color: var(--light-color);
+
+.contact-container .overlay {
+  background-color: var(--dark-color);
+  z-index: 3;
+  position: relative;
+
+
 }
+.contact-container .overlay h4 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+
+.contact-container .giphy-embed {
+  height: 200px;
+  z-index: 1;
+  transform: rotate(90deg) !important;
+}
+
+
 
 .personal-links {
   display: flex;
@@ -296,6 +330,8 @@ h2 {
     margin:0 0.3rem;
     padding: 0.5rem;
   }
-
+ .coffee-and-lofi iframe {
+   width: 100%;
+ }
 }
 
